@@ -44,10 +44,18 @@ export default {
 
   // THIS DOES NOT WORK
   asyncData () {
-    const inst = new MyInstance('Andrii')
+    // const inst = new MyInstance('Andrii')
 
     return {
-      inst
+      // inst
+      name: 'Andrii'
+    }
+  },
+
+  computed: {
+    inst () {
+      // instantiate on front
+      return new MyInstance(this.name)
     }
   }
 }
