@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <logo :inst="inst" />
       <h1 class="title">
         nuxt-instanceof
       </h1>
@@ -30,10 +30,25 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import MyInstance from '@/assets/js/MyInstance'
 
 export default {
   components: {
     Logo
+  },
+
+  // THIS WOULD WORK
+  // data () {
+  //   return { inst: new MyInstance('Andrii') }
+  // },
+
+  // THIS DOES NOT WORK
+  asyncData () {
+    const inst = new MyInstance('Andrii')
+
+    return {
+      inst
+    }
   }
 }
 </script>

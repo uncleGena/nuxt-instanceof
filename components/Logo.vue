@@ -17,6 +17,26 @@
     </g>
   </svg>
 </template>
+
+<script>
+import MyInstance from '../assets/js/MyInstance'
+
+export default {
+  name: 'Logo',
+  props: {
+    inst: {
+      type: MyInstance, // FIXME: DOES NOT WORK
+      required: true
+    }
+  },
+
+  mounted () {
+    // eslint-disable-next-line
+    console.log(this.inst)
+  }
+}
+</script>
+
 <style>
 .NuxtLogo {
   animation: 1s appear;
